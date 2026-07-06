@@ -1,0 +1,176 @@
+.section__3 {
+  background-color: #eee;
+  margin-top: -340px;
+  height: 200vh;
+
+  @include responsive(laptops) {
+    height: 180vh;
+  }
+
+  .section__card {
+    padding: 20px 50px;
+    height: 550px;
+    margin-top: 200px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include responsive(laptops) {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 20px 30px;
+      gap: 20px;
+    }
+
+    @include responsive(phone) {
+      grid-template-columns: repeat(1, 1fr);
+      margin-top: -50px;
+    }
+
+    .cards__grid {
+      width: 350px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 0 30px;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+      border-radius: 5px;
+
+      @include responsive(laptops) {
+        width: 300px;
+        height: 400px;
+      }
+
+      @include responsive (phone) {
+        width: 300px;
+        height: 350px;
+      }
+
+      h3 {
+        color: #fff;
+        font-size: 30px;
+        text-transform: uppercase;
+
+        @include responsive(phone) {
+          font-size: 20px;
+          text-transform: capitalize;
+          margin-top: 40px;
+        }
+      }
+
+      p {
+        color: #fff;
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        @include flex(center);
+
+        @include responsive(phone) {
+          margin-top: -30px;
+        }
+      }
+
+      h2 {
+        font-size: 40px;
+        color: #fff;
+        @include flex(center);
+      }
+
+      .btn4 {
+        margin-top: 100px;
+        padding: 20px;
+        width: 200px;
+        border-radius: 100px;
+        border: none;
+        text-transform: capitalize;
+        font-size: 16px;
+        position: relative;
+        left: 40px;
+        cursor: pointer;
+        color: #666;
+        transition: 0.4s;
+        box-shadow: 0 10px 20px rgba($color: #000000, $alpha: 0.3);
+        @include hover();
+
+        @include responsive(laptops) {
+          left: 30px;
+          top: -40px;
+        }
+
+        &:hover {
+          opacity: 0.5;
+        }
+
+        &:focus {
+          transform: translateY(-5px);
+          outline: none;
+        }
+
+        &:active {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .most {
+    margin: 200px 0;
+    color: #000000;
+    z-index: 200;
+    position: relative;
+    left: 40%;
+    top: 20%;
+    text-transform: uppercase;
+    font-size: 35px;
+    background: linear-gradient(to left, $color-primary-dark, $color-primary-light);
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+
+    @include responsive(laptops) {
+      top: 20%;
+      left: 25%;
+    }
+
+    @include responsive(phone) {
+      top: 10%;
+      font-size: 18px;
+    }
+  }
+
+  .c1 {
+    background: linear-gradient(300deg, $color-secondary-dark, $color-secondary-dark1)
+  }
+
+  .c2 {
+    background: linear-gradient(300deg, $color-primary-dark, $color-primary-light)
+  }
+
+  .c3 {
+    background: linear-gradient(300deg, $color-tertiary-dark, $color-tertiary-light);
+  }
+}
+
+#btn {
+  margin-top: 50px;
+  @include flex(center);
+
+  @include responsive(laptops) {
+    display: none;
+  }
+
+  button {
+    padding: 20px 30px;
+    display: block;
+    border-radius: 100px;
+    text-transform: uppercase;
+    font-size: 16px;
+    width: 300px;
+    background: $color-primary;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba($color: #000000, $alpha: 0.5);
+  }
+}

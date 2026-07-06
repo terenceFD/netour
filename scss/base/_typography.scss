@@ -1,0 +1,131 @@
+.main {
+
+    .section__1 {
+        height: 140vh;
+        background-color: $color-grey-light-2;
+        padding: 20px 70px;
+        margin-top: -140px;
+        width: 100%;
+        z-index: -1;
+
+        &-heading {
+            margin: 250px 0 20px 0;
+            @include heading();
+
+            @include responsive(tablets) {
+                font-size: 25px;
+                margin: 150px 0 20px 0;
+            }
+
+
+        }
+    }
+}
+
+
+.section__2 {
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
+    background-size: cover;
+    transform: skewY(-7deg);
+    margin-top: -10rem;
+    padding: 20rem 30px;
+
+    @include responsive(tablets) {
+        height: 140vh;
+        transform: skewY(0);
+        padding: 20rem 50px;
+    }
+
+    @include responsive(phone) {
+        height: 200vh;
+    }
+
+    .card__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+        place-items: center;
+        align-items: center;
+        height: 320px;
+        gap: 50px;
+        width: 100%;
+        max-width: 114rem;
+        margin: 0 auto;
+        transform: skewY(7deg);
+
+        @include responsive(tablets) {
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: -110px;
+            transform: skewY(0);
+        }
+
+        @include responsive(laptops) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include responsive(phone) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    .card {
+        width: 250px;
+        height: 100%;
+        @include flex(center);
+        flex-direction: column;
+        padding: 10px 20px;
+        text-align: center;
+        background-color: $color-grey-light-2;
+        transition: all 0.5s;
+
+        &:hover {
+            transform: translateY(-20px);
+        }
+
+        @include responsive (tablets) {
+            width: 320px;
+            height: 400px;
+        }
+
+        @include responsive(phone) {
+            width: 300px;
+            height: 320px;
+        }
+    }
+
+    h3 {
+        color: #777;
+        font-size: 20px;
+        margin-bottom: 20px;
+        text-transform: capitalize;
+        font-weight: bold;
+
+        @include responsive(tablets) {
+            font-size: 25px;
+        }
+    }
+
+    p {
+        font-size: 16px;
+        color: #999;
+        line-height: 25px;
+        font-weight: normal;
+
+        @include responsive(tablets) {
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+    }
+
+    .globe {
+        color: rgba(40, 180, 133, 0.8);
+    }
+
+    svg {
+        width: 70px;
+        height: 70px;
+        fill: rgba(40, 180, 133, 0.8);
+        margin-bottom: 30px;
+    }
+}

@@ -1,0 +1,5 @@
+we use the BEM which means "build element modifier"
+
+1:build ==> header
+2:element ==>header__nav
+3:modifier ==>header__nav--ul

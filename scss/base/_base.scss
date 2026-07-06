@@ -1,0 +1,64 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    box-sizing: border-box;
+    padding: 3rem;
+    font-family: sans-serif;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+    @include responsive(tablets) {
+        padding: 0;
+    }
+}
+
+.svg {
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+    background-color: #555;
+    z-index: 50;
+
+    svg {
+        width: 30px;
+        height: 30px;
+        fill: #fff;
+    }
+}
+
+.svg1 {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    background-color: #555;
+    z-index: 50;
+
+    svg {
+        width: 30px;
+        height: 30px;
+        fill: #fff;
+    }
+}
+
+.svg1.down {
+    display: none;
+}
+
+// .svg.up{
+//     // display: none;
+// }

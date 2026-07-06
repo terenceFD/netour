@@ -1,0 +1,123 @@
+.section__1__flex {
+    @include flex(space-between);
+    gap: 100px;
+    margin: 50px auto;
+
+    @include responsive(tablets) {
+        flex-direction: column;
+    }
+
+    &__right {
+        position: relative;
+        width: 70%;
+        margin-top: -9.375rem;
+
+        @include responsive(tablets){
+            @include flex(centerr);
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            transition: all 0.5s;
+            box-shadow: 0 .625rem 1.25rem rgba($color: #000000, $alpha: 0.5);
+        }
+
+        .img1 {
+            top: -50px;
+        }
+
+        .img2 {
+            right: 6rem;
+            top: 2.5rem;
+        }
+
+        .img3 {
+            top: 50px;
+            left: 5rem;
+        }
+
+        &:hover img {
+            transform: scale(1.2);
+            z-index: 100;
+            outline-offset: 20px;
+            outline: 10px solid $color-primary;
+            border-radius: 10px;
+
+        }
+
+        &:hover img:not(:hover) {
+            transform: scale(1.05);
+            z-index: 10;
+            transition: all 0.5s;
+            outline: none;
+        }
+    }
+
+    p {
+        line-height: 25px;
+        font-size: 15px;
+        color: #888;
+        text-align: justify;
+    }
+
+    .heading {
+        color: #888;
+        font-size: 20px;
+        margin-bottom: .9375rem;
+        text-align: justify;
+    }
+
+    &__left {
+        width: 70%;
+
+        @include responsive(tablets) {
+            width: 100%;
+        }
+
+        .left2 {
+            margin-top: 2.5rem;
+            width: 100%;
+        }
+
+        .left1 {
+            width: 100%;
+        }
+    }
+
+    .link {
+        margin-top: 20px;
+        display: inline-block;
+        font-size: 18px;
+        width: 200px;
+        position: relative;
+        padding: 5px 20px;
+
+        @include responsive(tablets){
+            margin-top: 20px;
+        }
+
+        a {
+            color: $color-primary;
+            text-decoration: none;
+            width: 100%;
+            z-index: 30;
+
+            &::before {
+                display: inline-block;
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 1px;
+                background-color: $color-primary;
+                transition: all 0.3s;
+            }
+
+        }
+    }
+}

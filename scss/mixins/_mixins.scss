@@ -1,0 +1,81 @@
+@mixin flex($c) {
+    display: flex;
+    justify-content: $c;
+    align-items: center;
+}
+
+@mixin transform() {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin hover() {
+    &::before {
+        display: inline-block;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        z-index: -1;
+        border-radius: 100px;
+        transition: 0.5s ease;
+        overflow: hidden;
+    }
+
+    &:hover::before {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+    }
+}
+
+@mixin heading() {
+
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 35px;
+    width: 100%;
+    background-image: linear-gradient(to left,
+            $color-primary, $color-primary-light);
+    background-clip: text;
+    color: transparent;
+    transition: all 0.5s;
+    z-index: -1;
+
+
+    &:hover {
+        transform: skewX(-30deg) scale(1.15);
+        text-shadow: 0 10px 20px rgba($color: #000000, $alpha: 0.5);
+    }
+}
+
+$points: (
+    phone:600px,
+    tablets:1200px,
+    laptops:908px,
+);
+
+@mixin responsive($breakpoints) {
+    @if($breakpoints ==phone) {
+        @media(max-width:map-get($points, phone)) {
+            @content;
+        }
+
+    }
+
+    @if($breakpoints ==tablets) {
+        @media(max-width:map-get($points, tablets)) {
+            @content;
+        }
+    }
+
+    @if($breakpoints ==laptops) {
+        @media(max-width:map-get($points, laptops)) {
+            @content;
+        }
+    }
+}

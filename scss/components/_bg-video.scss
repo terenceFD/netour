@@ -1,0 +1,157 @@
+.section__5 {
+    position: relative;
+    margin-top: -100px;
+    margin-bottom: 100px;
+
+    .video {
+        margin-bottom: 50px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: .15;
+        z-index: -1;
+        height: 1000px;
+    }
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+h3 {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 100px;
+    background: linear-gradient(to left, $color-primary-dark, $color-primary-light);
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    width: 100%;
+
+    @include responsive(phone) {
+        font-size: 16px;
+        width: 100%;
+        margin-top: -10px;
+    }
+}
+
+.wrapper {
+    padding: 100px;
+
+    .white {
+        @include flex(center);
+        flex-direction: column;
+        gap: 100px;
+    }
+
+    .name {
+        position: absolute;
+        top: 1000px;
+        left: 20%;
+        color: #fff;
+        font-size: 16px;
+        text-transform: capitalize;
+        font-weight: 900;
+        transition: 0.5s;
+    }
+
+    .img {
+        width: 150px;
+        height: 150px;
+        transform: skewX(12deg);
+        position: relative;
+
+        @include responsive(laptops) {
+            transform: skewX(0);
+        }
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        transition: all 0.5s;
+    }
+
+    .left {
+        width: 70%;
+    }
+
+    .flex-vid {
+        @include flex(center);
+        gap: 20px;
+        background-color: #fff;
+        opacity: 0.9;
+        padding: 30px;
+        width: 80%;
+        overflow: hidden;
+        transform: skewX(-12deg);
+
+        @include responsive(laptops) {
+            transform: skewX(0);
+            width: 100%;
+        }
+
+        @include responsive(phone) {
+            flex-direction: column;
+            gap: 5px;
+            height: 400px;
+            width: 400px;
+            padding: 10px;
+        }
+
+        h4 {
+            font-size: 20px;
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 25px;
+            font-size: 17px;
+            color: #777;
+            text-align: justify;
+
+            @include responsive(phone) {
+                line-height: 20px;
+            }
+        }
+
+        &:hover img {
+            filter: blur(5px);
+            transform: scale(1.09);
+        }
+
+        &:hover .name {
+            top: 50%;
+        }
+    }
+}
+
+.link {
+    text-align: center;
+    font-size: 16px;
+    text-transform: capitalize;
+
+    a {
+        text-decoration: none;
+        color: $color-primary;
+        position: relative;
+        font-weight: bold;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            margin-bottom: -10px;
+            width: 100%;
+            height: 1.5px;
+            background: $color-primary;
+        }
+    }
+
+}
